@@ -1,0 +1,16 @@
+NAME    HEXMAZE    WINDOWAPI
+
+DESCRIPTION 'Written by James L. Dean  06/16/92'
+
+STUB    'OS2STUB.EXE'
+
+CODE    MOVEABLE
+DATA    MOVEABLE MULTIPLE
+
+HEAPSIZE  8192
+STACKSIZE 500000
+
+EXPORTS
+    client_window_proc
+    help_proc
+

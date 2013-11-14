@@ -1,0 +1,25 @@
+# IBM Developer's Workframe/2 Make File Creation run at 10:23:34 on 09/11/92
+
+# Make File Creation run in directory:
+#   D:\USER\OS2\HEXMAZE;
+
+# Assumed INCLUDE environment variable path:
+#   D:\TOOLKT20\C\OS2H;
+#   D:\TOOLKT20\ASM\OS2INC;
+#   D:\sfw\os2\IBMC\INCLUDE;
+
+
+HEXMAZE.RES:  HEXMAZE.RC  \
+#  {.;$(INCLUDE)}OS2.H  \
+   {.;$(INCLUDE)}HEXMAZE.H  \
+   HEXMAZE.ICO  \
+   HEXMAZE
+
+hexmaze.OBJ:  hexmaze.c  \
+#  {$(INCLUDE);}stdio.h  \
+#  {$(INCLUDE);}os2.h  \
+#  {$(INCLUDE);}stdlib.h  \
+#  {$(INCLUDE);}malloc.h  \
+#  {$(INCLUDE);}math.h  \
+   {.;$(INCLUDE);}hexmaze.h  \
+   HEXMAZE

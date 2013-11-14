@@ -1,0 +1,40 @@
+#define INCL_PM
+#include <os2.h>
+#include "hexmaze.h"
+
+POINTER ID_MAINMENU hexmaze.ico
+
+MENU ID_MAINMENU
+  {
+    SUBMENU "~Options",-1
+      {
+        MENUITEM "~Solve\tAltS",IDM_SOLVE
+        MENUITEM "~New\tAltN",IDM_NEW
+        MENUITEM "~Clear\tAltC",IDM_CLEAR
+        MENUITEM "~Help\tAltH",IDM_HELP
+      }
+  }
+
+ACCELTABLE ID_MAINMENU
+  {
+    "s",IDM_SOLVE,CHAR,ALT
+    "n",IDM_NEW,CHAR,ALT
+    "c",IDM_CLEAR,CHAR,ALT
+    "h",IDM_HELP,CHAR,ALT
+  }
+
+DLGTEMPLATE IDD_HELPBOX
+  {
+    DIALOG  "",-1,5,5,224,123,WS_SAVEBITS|FS_DLGBORDER
+      {
+        LTEXT "     Resize or select New for a new maze.",-1,2,107,179,8
+        LTEXT "     Select Solve to outline the solution.",-1,2,93,168,8
+        LTEXT "     Select Clear to remove the solution.",-1,2,78,168,8
+        LTEXT "     Use the horizontal scroll bar to vary the rotation",-1,2,64,220,8
+        LTEXT "from 0 to 360 degrees.",-1,2,56,101,8
+        LTEXT "     Use the vertical scroll bar to vary the tilt from",-1,2,40,207,8
+        LTEXT "0 to 90 degrees.",-1,2,33,73,8
+        DEFPUSHBUTTON "Okay",DID_OK,82,10,40,14,WS_GROUP
+     }
+  }
+

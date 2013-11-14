@@ -1,0 +1,35 @@
+# IBM Developer's Workframe/2 Make File Creation run at 10:23:34 on 09/11/92
+
+# Make File Creation run in directory:
+#   D:\USER\OS2\HEXMAZE;
+
+.SUFFIXES:
+
+.SUFFIXES: .c .rc
+
+ALL: HEXMAZE.EXE \
+     HEXMAZE.RES
+
+hexmaze.exe:  \
+  hexmaze.OBJ \
+  HEXMAZE.RES \
+  hexmaze.def \
+  HEXMAZE
+   @REM @<<HEXMAZE.@0
+     /ST:60000 /PM:PM +
+     hexmaze.OBJ
+     hexmaze.exe
+     
+     
+     hexmaze.def;
+<<
+   LINK386.EXE @HEXMAZE.@0
+   RC HEXMAZE.RES hexmaze.exe
+
+{.}.rc.res:
+   RC -r .\$*.RC
+
+{.}.c.obj:
+   ICC.EXE /Sp1 /Kf /Fohexmaze.obj /Gm /Gs- /Fehexmaze.exe .\$*.c
+
+!include HEXMAZE.DEP
